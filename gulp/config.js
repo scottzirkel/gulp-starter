@@ -95,6 +95,7 @@ module.exports = {
     sass: srcAssets + '/scss/**/*.{sass,scss}',
     scripts: srcAssets + '/js/**/*.js',
     images: srcAssets + '/images/**/*',
+    html: srcAssets + '/**/*.html'
   },
   scsslint: {
     src: [
@@ -185,5 +186,13 @@ module.exports = {
   susy: {
     src: dependencies + '/susy/sass/_susy.scss',
     dest: srcAssets + '/scss/vendor/_susy.scss'
+  },
+  htmlreplace: {
+    src: src + '/**/*.html',
+    dest: build,
+    options: {
+      js: developmentAssets + '/js/vendor.min.js',
+      css: developmentAssets + '/css/vendor.min.css'
+    }
   }
 };

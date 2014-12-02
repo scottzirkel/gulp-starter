@@ -15,6 +15,7 @@ gulp.task('build', function (callback) {
       'scripts',
       'images',
     ],
+    'html'
     'base64',
   callback);
 });

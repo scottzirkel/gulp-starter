@@ -27,6 +27,7 @@
     "gulp-changed": "^1.0.0",
     "gulp-compass": "^2.0.3",
     "gulp-filter": "^1.0.2",
+    "gulp-html-replace": "^1.4.1",
     "gulp-htmlmin": "^0.2.0",
     "gulp-imagemin": "^2.0.0",
     "gulp-jshint": "^1.9.0",
