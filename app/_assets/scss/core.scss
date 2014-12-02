@@ -1,0 +1,27 @@
+/*
+The Alara Group
+Christina Donald <christina@thealaragroup.net> - Design
+Scott Zirkel <scott@thealaragroup.net> - CSS/HTML/JS & Design
+Andres Dunn <andres@thealaragroup.net> - CSS/HTML/JS
+
+A few notes:
+Follow the Code Guide - http://codeguide.co/
+Use BEM styntax.
+ie:
+.block {}
+.block__element {}
+.block--modifier {}
+
+.block represents the higher level of an abstraction or component.
+.block__element represents a descendent of .block that helps form .block as a whole.
+.block--modifier represents a different state or version of .block.
+
+More here: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+*/
+
+// Import Normalize.css from Bower
+// @import './build/bower_components/normalize.css/normalize.css';
+
+@import "modules/all";
+@import "partials/all";
+@import "vendors/all";

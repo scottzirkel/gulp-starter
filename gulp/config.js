@@ -7,6 +7,7 @@ var src               = 'app',
     build             = 'build',
     development       = 'development',
     production        = 'production',
+    dependencies      = 'app/_components',
     srcAssets         = 'app/_assets',
     developmentAssets = 'build/assets',
     productionAssets  = 'build/production/assets';
@@ -180,5 +181,9 @@ module.exports = {
   compass: {
     src: srcAssets + '/scss/**.*{sass,scss}',
     dest: developmentAssets + '/css'
+  },
+  susy: {
+    src: dependencies + '/susy/sass/_susy.scss',
+    dest: srcAssets + '/scss/vendor/_susy.scss'
   }
 };
