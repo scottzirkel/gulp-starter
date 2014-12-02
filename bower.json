@@ -1,0 +1,20 @@
+{
+  "name": "App Name",
+  "version": "0.0.0",
+  "authors": [
+    "Scott Zirkel <scott@scottzirkel.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "jquery": "~2.1.1"
+  }
+}
