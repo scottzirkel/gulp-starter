@@ -3,6 +3,8 @@
 This gulp starter is based off the work of [greypants](https://github.com/greypants/gulp-starter).
 It is customized to my workflow, but can be adapted to most any.
 
+**Fair warning!** It is very much a work in progress at this point.
+
 ## Setup
 
 I am using the following setup for my file structure:

@@ -4,8 +4,9 @@
   https://github.com/VFK/gulp-html-replace
 */
 
-var gulp    = require('gulp'),
-    config  = require('../../config').htmlreplace;
+var gulp        = require('gulp'),
+    htmlreplace = require('gulp-html-replace'),
+    config      = require('../../config').htmlreplace;
 
 gulp.task('htmlreplace', function () {
   gulp.src(config.src)

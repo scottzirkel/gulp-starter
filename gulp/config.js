@@ -95,7 +95,7 @@ module.exports = {
     sass: srcAssets + '/scss/**/*.{sass,scss}',
     scripts: srcAssets + '/js/**/*.js',
     images: srcAssets + '/images/**/*',
-    html: srcAssets + '/**/*.html'
+    html: src + '/_htdocs/**/*.html'
   },
   scsslint: {
     src: [
@@ -188,11 +188,11 @@ module.exports = {
     dest: srcAssets + '/scss/vendor/_susy.scss'
   },
   htmlreplace: {
-    src: src + '/**/*.html',
+    src: src + '/_htdocs/**/*.html',
     dest: build,
     options: {
-      js: developmentAssets + '/js/vendor.min.js',
-      css: developmentAssets + '/css/vendor.min.css'
+      js: '/' + developmentAssets + '/js/app.min.js',
+      css: '/' + developmentAssets + '/css/app.min.css'
     }
   }
 };

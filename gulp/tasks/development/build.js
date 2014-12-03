@@ -12,10 +12,8 @@ gulp.task('build', function (callback) {
     'susy',
     [
       'sass',
-      'scripts',
-      'images',
+      'images'
     ],
-    'html'
     'base64',
   callback);
 });
