@@ -10,6 +10,7 @@ var gulp          = require('gulp'),
     gulpFilter    = require('gulp-filter'),
     autoprefixer  = require('gulp-autoprefixer'),
     sourcemaps    = require('gulp-sourcemaps'),
+    csscomb       = require('gulp-csscomb'),
     config        = require('../../config');
 
 gulp.task('sass', function () {
@@ -20,13 +21,14 @@ gulp.task('sass', function () {
 
   browsersync.notify('Compiling Sass');
 
-  return gulp.src(config.sass.src)
+  return gulp.src('app/_assets/scss/core.scss')
     .pipe(plumber())
     .pipe(sass(sassConfig))
+    .pipe(csscomb())
     .pipe(sourcemaps.init())
     .pipe(autoprefixer(config.autoprefixer))
     .pipe(filter)
-    .pipe(sourcemaps.write('.', { includeContent: false }))
+    .pipe(sourcemaps.write('./maps', { includeContent: false }))
     .pipe(filter.restore())
     .pipe(gulp.dest(config.sass.dest));
 });

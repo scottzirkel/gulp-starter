@@ -10,17 +10,21 @@ var gulp          = require('gulp'),
     gulpFilter    = require('gulp-filter'),
     autoprefixer  = require('gulp-autoprefixer'),
     sourcemaps    = require('gulp-sourcemaps'),
+    csscomb       = require('gulp-csscomb'),
     config        = require('../../config');
 
 gulp.task('compass', function () {
-  broswersync.notify('Compiling Sass via Compass');
+  browsersync.notify('Compiling Sass via Compass');
+
+  var filter = gulpFilter(['*.css', '!*.map']);
 
   var compassConfig = config.compass;
   compassConfig.onError = browsersync.notify;
 
-  return gulp.src(config.compass.src)
+  return gulp.src('app/_assets/scss/**/*.{scss,sass}')
     .pipe(plumber())
     .pipe(compass(compassConfig))
+    .pipe(csscomb())
     .pipe(sourcemaps.init())
     .pipe(autoprefixer(config.autoprefixer))
     .pipe(filter)

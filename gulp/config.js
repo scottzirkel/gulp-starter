@@ -22,8 +22,7 @@ module.exports = {
       files: [
         developmentAssets + '/css/*css',
         developmentAssets + '/js/*.js',
-        developmentAssets + '/images/**',
-        developmentAssets + '/fonts/*'
+        developmentAssets + '/images/**'
       ]
     },
     production: {
@@ -37,15 +36,23 @@ module.exports = {
     src: [developmentAssets]
   },
   sass: {
-    src: srcAssets + '/scss/**.*{sass,scss}',
+    src: srcAssets + '/scss/**.scss',
     dest: developmentAssets + '/css',
     options: {
       noCache: true,
       compass: false,
-      susy: true,
       bundleExec: true,
-      sourcemap: true,
-      sourcemapPath: '../../_assets/scss'
+      sourcemap: false,
+      errorLogToConsole: true
+    }
+  },
+  compass: {
+    src: srcAssets + '/scss/**.scss',
+    dest: developmentAssets + '/css',
+    options: {
+      noCache: true,
+      susy: true,
+      errorLogToConsole: true
     }
   },
   autoprefixer: {
@@ -96,13 +103,6 @@ module.exports = {
     scripts: srcAssets + '/js/**/*.js',
     images: srcAssets + '/images/**/*',
     html: src + '/_htdocs/**/*.html'
-  },
-  scsslint: {
-    src: [
-      srcAssets + '/scss/**/*.{sass,scss}',
-      '!' + srcAssets + '/scss/base/_sprites.scss',
-      '!' + srcAssets + '/scss/helpers/_meyer-reset.scss'
-    ]
   },
   jshint: {
     src: srcAssets + '/js/*.js'
@@ -179,13 +179,9 @@ module.exports = {
       include: []
     }
   },
-  compass: {
-    src: srcAssets + '/scss/**.*{sass,scss}',
-    dest: developmentAssets + '/css'
-  },
   susy: {
-    src: dependencies + '/susy/sass/_susy.scss',
-    dest: srcAssets + '/scss/vendor/_susy.scss'
+    src: dependencies + '/susy/sass/**/*.{sass,scss}',
+    dest: srcAssets + '/scss/vendor/'
   },
   htmlreplace: {
     src: src + '/_htdocs/**/*.html',
