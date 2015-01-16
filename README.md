@@ -1,7 +1,6 @@
 # Gulp Starter
 
-This gulp starter is based off the work of [greypants](https://github.com/greypants/gulp-starter).
-It is customized to my workflow, but can be adapted to most any.
+This is my current starting point for building websites. I'll be adding to it as I can.
 
 **Fair warning!** It is very much a work in progress at this point.
 

@@ -1,0 +1,59 @@
+$tan: #c3c0b4;
+$wheat: #cfccbf;
+
+$graytone: (
+  neutral: (
+    one: #e5e5e5,
+    two: #ccc,
+    three: #b3b3b3,
+    four: #999,
+    five: #808080,
+    six: #666,
+    seven: #4d4d4d,
+    eight: #333,
+    nine: #1a1a1a
+  ),
+  cool: (
+    one: #dad9d7,
+    two: #d1d0ce,
+    three: #c8c8c8,
+    four: #bcbcbc,
+    five: #b2b2b2,
+    six: #a8a8aa,
+    seven: #98999b,
+    eight: #898b8e,
+    nine: #76777b,
+    ten: #63656a,
+    eleven: #54565b
+  ),
+  warm: (
+    one: #d7d2cb,
+    two: #ccc4bc,
+    three: #c0b8b0,
+    four: #b5ada6,
+    five: #ada29a,
+    six: #a69c95,
+    seven: #968c83,
+    eight: #8d827a,
+    nine: #847870,
+    ten: #7a6e67,
+    eleven: #6f625a
+  )
+);
+
+$black__7: #3d3935;
+
+$red--accent: #800000;
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  global-box-sizing: border-box
+);
+
+// Map of the viewport breakpoints
+$breakpoints: (
+small: 767px,
+medium: 992px,
+large: 1200px
+);

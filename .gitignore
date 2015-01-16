@@ -1,8 +1,3 @@
-node_modules
-npm-debug.log
-app/_components
 build
-development
-!gulp/tasks/development
-production
-!gulp/tasks/production
+node_modules
+app/_components

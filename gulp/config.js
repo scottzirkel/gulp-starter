@@ -1,194 +1,70 @@
-/*
-  Config
-  Configs for all gulp tasks
-*/
-
-var src               = 'app',
-    build             = 'build',
-    development       = 'development',
-    production        = 'production',
-    dependencies      = 'app/_components',
-    srcAssets         = 'app/_assets',
-    developmentAssets = 'build/assets',
-    productionAssets  = 'build/production/assets';
+var src           = 'app',
+    build         = 'build',
+    dependencies  = src + '/_components',
+    assets        = src + '/assets',
+    buildAssets   = build + '/assets';
 
 module.exports = {
-  browsersync: {
-    development: {
-      server: {
-        baseDir: [development, build, src]
-      },
-      port: 9999,
-      files: [
-        developmentAssets + '/css/*css',
-        developmentAssets + '/js/*.js',
-        developmentAssets + '/images/**'
-      ]
+  bower: {
+    css: {
+      src: [dependencies + '/**/css/*.css', dependencies + '/**/dist/*.css', dependencies + '/**/*.css'],
+      dest: buildAssets + '/css'
     },
-    production: {
-      server: {
-        baseDir: [production]
-      },
-      port: 9988
+    js: {
+      src: [dependencies + '/dist/**.min.js', dependencies + '/**/*.js', !dependencies + '/src/*.js'],
+      dest: buildAssets + '/js'
     }
   },
-  delete: {
-    src: [developmentAssets]
+  browsersync: {
+    server: {
+      baseDir: [build]
+    },
+    port: 9999,
+    files: [
+      buildAssets + '/css/*.css',
+      buildAssets + '/js/.js',
+      buildAssets + '/img/**.{jpg,jpeg,gif,png}'
+    ]
   },
-  sass: {
-    src: srcAssets + '/scss/**.scss',
-    dest: developmentAssets + '/css',
+  clean: {
+    src: build,
     options: {
-      noCache: true,
-      compass: false,
-      bundleExec: true,
-      sourcemap: false,
-      errorLogToConsole: true
+      force: true
     }
   },
   compass: {
-    src: srcAssets + '/scss/**.scss',
-    dest: developmentAssets + '/css',
-    options: {
-      noCache: true,
-      susy: true,
-      errorLogToConsole: true
-    }
+    src: src + '/sass/core.scss',
+    dest: buildAssets + '/css',
+    require: ['susy']
   },
-  autoprefixer: {
-    browsers: [
-      'last 2 versions',
-      'safari 5',
-      'ie 8',
-      'ie 9',
-      'opera 12.1',
-      'ios 6',
-      'android 4'
-    ],
-    cascade: true
-  },
-  browserify: {
-    // Enable source maps
-    debug: true,
-    // Additional file extensions to make optional
-    extensions: ['.coffee', '.hbs'],
-    // A seperate bundle will be generated for each
-    // bundle config in the list below
-    bundleConfigs: [{
-      entries: './' + srcAssets + '/js/application.js',
-      dest: developmentAssets + '/js',
-      outputName: 'application.js'
-    }, {
-      entries: './' + srcAssets + '/js/head.js',
-      dest: developmentAssets + '/js',
-      outputName: 'head.js'
-    }]
+  html: {
+    src: [src + '/html/**/*.html', !src + '/html/templates/*.html'],
+    dest: build
   },
   images: {
-    src: srcAssets + '/images/**/*',
-    dest: developmentAssets + '/images'
+    src: src + '/images/**/*.{jpg,jpeg,gif,png}',
+    dest: buildAssets + '/img'
   },
-  base64: {
-    src: developmentAssets + '/css/*.css',
-    dest: developmentAssets + '/css',
+  javascript: {
+    src: src + '/js/**/*.js',
+    dest: buildAssets + '/js'
+  },
+  sassdoc: {
+    src: src + '/sass',
+    dest: build + '/docs',
     options: {
-      baseDir: build,
-      extensions: ['png'],
-      maxImageSize: 20 * 1024,
-      debug: false
+      verbose: true
+    }
+  },
+  scsslint: {
+    src: src + '/sass/*.scss',
+    options: {
+      'config': '/scsslint.yaml'
     }
   },
   watch: {
-    sass: srcAssets + '/scss/**/*.{sass,scss}',
-    scripts: srcAssets + '/js/**/*.js',
-    images: srcAssets + '/images/**/*',
-    html: src + '/_htdocs/**/*.html'
-  },
-  jshint: {
-    src: srcAssets + '/js/*.js'
-  },
-  optimize: {
-    css: {
-      src: developmentAssets + '/css/*.css',
-      dest: productionAssets + '/css/',
-      options: {
-        keepSpecialComments: 0
-      }
-    },
-    js: {
-      src: developmentAssets + '/js/*.js',
-      dest: productionAssets + '/js',
-      options: {}
-    },
-    images: {
-      src: developmentAssets + '/images/**/*.{jpg,jpeg,png,gif}',
-      dest: productionAssets + '/images/',
-      options: {
-        optimizationLevel: 3,
-        progressive: true,
-        interlaced: true
-      }
-    },
-    html: {
-      src: src + '/**/*.html',
-      dest: production,
-      options: {
-        collapseWhitespace: true
-      }
-    }
-  },
-  revision: {
-    src: {
-      assets: [
-        productionAssets + '/css/*.css',
-        productionAssets + '/js/*.js',
-        productionAssets + '/images/**/*',
-      ],
-      base: production
-    },
-    dest: {
-      assets: production,
-      manifest: {
-        name: 'manifest.json',
-        path: productionAssets
-      }
-    }
-  },
-  collect: {
-    src: [
-      productionAssets + '/manifest.json',
-      production + '/**/*.{html,xml,txt,json,css,js}',
-      '!' + production + '/feed.xml'
-    ],
-    dest: production
-  },
-  rsync: {
-    src: production + '/**/',
-    options: {
-      destination: '~/path/to/web/root',
-      root: production,
-      hostname: 'mydomain.com',
-      username: 'user',
-      incremental: true,
-      progress: true,
-      relative: true,
-      emptyDirectories: true,
-      recursive: true,
-      clean: true,
-      exclude: ['.DS_Store'],
-      include: []
-    }
-  },
-  susy: {
-    src: dependencies + '/susy/sass/**/*.{sass,scss}',
-    dest: srcAssets + '/scss/vendor/'
-  },
-  htmlreplace: {
-    src: src + '/_htdocs/**/*.html',
-    dest: build,
-    options: {
-      js: '/' + developmentAssets + '/js/app.min.js',
-      css: '/' + developmentAssets + '/css/app.min.css'
-    }
+    images: src + '/images/**/*.{jpg,jpeg,gif,png}',
+    html: src + '/html/**/*.html',
+    sass: src + '/sass/**/*.{sass,scss}'
   }
-};
+}

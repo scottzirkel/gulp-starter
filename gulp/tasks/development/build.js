@@ -1,19 +1,17 @@
-/*
-  Build
-  Define the build sequence, if specificity is needed
-*/
-
 var gulp        = require('gulp'),
     runSequence = require('run-sequence');
 
-gulp.task('build', function (callback) {
+gulp.task('build', ['clean'], function (callback) {
   runSequence(
-    'delete',
-    'susy',
+    'scss-lint',
     [
-      'sass',
+      'html',
+      'compass',
+      'javascript',
+      'bower:css',
+      'bower:js',
       'images'
     ],
-    'base64',
-  callback);
-});
+    'sassdoc',
+    callback);
+})
