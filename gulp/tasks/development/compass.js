@@ -1,6 +1,7 @@
 var gulp    = require('gulp'),
     compass = require('gulp-compass'),
     concat  = require('gulp-concat'),
+    reload  = require('browser-sync').reload,
     config  = require('../../config').compass;
 
 gulp.task('compass', function () {
@@ -12,4 +13,5 @@ gulp.task('compass', function () {
     }))
     .pipe(concat('app.css'))
     .pipe(gulp.dest(config.dest))
+    .pipe(reload({stream:true}));
 })
