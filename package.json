@@ -2,6 +2,8 @@
   "name": "starter",
   "version": "2.0.0",
   "description": "The Alara Group",
+  "author": "Scott Zirkel <scott@thealaragroup.net>",
+  "license": "MIT",
   "main": "gulpfile.js",
   "private": true,
   "devDependencies": {
@@ -27,7 +29,5 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Scott Zirkel <scott@thealaragroup.net>",
-  "license": "MIT"
+  }
 }
