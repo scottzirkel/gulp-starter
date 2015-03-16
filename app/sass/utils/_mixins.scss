@@ -129,3 +129,38 @@
   width: $width;
   height: $height;
 }
+
+/// Center any element within a relatively positioned parent
+/// @author Chris Coyier
+/// @link http://codepen.io/chriscoyier/pen/yybgZd
+/// @param {Bool} $horizontal
+/// @param {Bool} $vertical
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50);
+  }
+}
+
+/// Gives a card depth effect.
+/// @param {Number} $depth - depth level (between 1 and 5)
+/// @link http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality Google Design
+/// @requires {function} top-shadow
+/// @requires {function} bottom-shadow
+@mixin card($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+  } @else {
+    box-shadow: bottom-shadow($depth), top-shadow($depth);
+  }
+}
