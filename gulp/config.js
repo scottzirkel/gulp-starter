@@ -35,6 +35,7 @@ module.exports = {
   compass: {
     src: src + '/sass/core.scss',
     dest: buildAssets + '/css',
+    autoprefixer: "'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'ff 17', 'opera 12.1', 'ios 6', 'android 4'",
     require: ['susy']
   },
   html: {
