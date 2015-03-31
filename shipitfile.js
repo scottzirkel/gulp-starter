@@ -3,7 +3,7 @@ var chalk       = require('chalk'),
     day         = ("0" + d.getDate()).slice(-2),
     month       = ("0" + (d.getMonth() + 1)).slice(-2),
     year        = d.getFullYear(),
-    datestamp   = month + day + year
+    datestamp   = month + day + year,
     config      = require('./shipitconfig'),
     workspace   = '../tmp/' + config.projectName,
     tmpFolder   = datestamp + config.projectName;
@@ -46,7 +46,7 @@ module.exports = function (shipit) {
   shipit.blTask('gulp', function () {
     shipit.log(chalk.green('Installing Gulp'));
     return shipit.local('gulp', {cwd: '../tmp/' + config.projectName})
-      .then(function (res) {
+      .then(function () {
         shipit.log(chalk.green('Gulp Installed'));
         shipit.emit('installed-gulp');
       })
@@ -63,7 +63,7 @@ module.exports = function (shipit) {
   shipit.blTask('build-tmp', function () {
     shipit.log(chalk.green('Build tmp dir'));
     return shipit.local('if [ -f ' + tmpFolder + ']; then mkdir ' + tmpFolder + '; else rm -rf ' + tmpFolder + ' && mkdir ' + tmpFolder + '; fi', {cwd: '../tmp'})
-      .then(function (res) {
+      .then(function () {
         shipit.log(chalk.green('Build tmp created'));
         shipit.emit('tmp-built');
       })
@@ -80,7 +80,7 @@ module.exports = function (shipit) {
   shipit.blTask('copy-build', function () {
     shipit.log(chalk.green('Copying build files'));
     return shipit.local('ditto build ../' + tmpFolder, {cwd: '../tmp/' + config.projectName})
-      .then(function (res) {
+      .then(function () {
         shipit.log(chalk.green('Build files copied'));
         shipit.emit('build-copied');
       })
@@ -97,7 +97,7 @@ module.exports = function (shipit) {
   shipit.blTask('cleanup:source', function () {
     shipit.log(chalk.green('Cleanup Source Files'));
     return shipit.local('rm -rf * && rm -rf .git*', {cwd: '../tmp/' + config.projectName})
-      .then(function (res) {
+      .then(function () {
         shipit.log(chalk.green('Source Files Removed'));
         shipit.emit('source-cleaned');
       })
@@ -114,7 +114,7 @@ module.exports = function (shipit) {
   shipit.blTask('paste-build', function () {
     shipit.log(chalk.green('Pasting build files'));
     return shipit.local('ditto ' + tmpFolder + ' ' + config.projectName, {cwd: '../tmp'})
-      .then(function (res) {
+      .then(function () {
         shipit.log(chalk.green('Build files pasted'));
         shipit.emit('build-pasted');
       })
@@ -131,7 +131,7 @@ module.exports = function (shipit) {
   shipit.task('cleanup:tmp', function () {
     shipit.log(chalk.green('Cleaning up local tmp folders'));
     return shipit.local('rm -rf ' + config.projectName + ' ' + tmpFolder, {cwd: '../tmp'})
-      .then(function (res) {
+      .then(function () {
         shipit.log(chalk.green('Cleaned up local tmp folders'));
         shipit.emit('tmp-cleaned');
       })

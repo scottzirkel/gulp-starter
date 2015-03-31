@@ -25,4 +25,4 @@ gulp.task('compass', function () {
     .pipe(concat('app.css'))
     .pipe(gulp.dest(config.dest))
     .pipe(reload({stream:true}));
-})
+});

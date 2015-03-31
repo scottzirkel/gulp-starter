@@ -9,4 +9,4 @@ module.exports = {
     servers: 'USERNAME@SERVER',
     deployTo: '/absolute/path/to/www/root'
   }
-}
+};

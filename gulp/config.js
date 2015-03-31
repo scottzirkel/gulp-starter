@@ -67,4 +67,4 @@ module.exports = {
     html: src + '/html/**/*.html',
     sass: src + '/sass/**/*.{sass,scss}'
   }
-}
+};
