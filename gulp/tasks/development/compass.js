@@ -9,7 +9,7 @@ var gulp    = require('gulp'),
 var onError = function (err) {
   gutil.beep();
   console.log(err);
-  this.emti('end');
+  this.emit('end');
 };
 
 gulp.task('compass', function () {
