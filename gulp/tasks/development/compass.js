@@ -2,10 +2,21 @@ var gulp    = require('gulp'),
     compass = require('gulp-compass'),
     concat  = require('gulp-concat'),
     reload  = require('browser-sync').reload,
+    gutil   = require('gulp-util'),
+    plumber = require('gulp-plumber'),
     config  = require('../../config').compass;
+
+var onError = function (err) {
+  gutil.beep();
+  console.log(err);
+  this.emti('end');
+};
 
 gulp.task('compass', function () {
   gulp.src(config.src)
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(compass({
       css: 'build/assets/css',
       sass: 'app/sass',
@@ -14,4 +25,4 @@ gulp.task('compass', function () {
     .pipe(concat('app.css'))
     .pipe(gulp.dest(config.dest))
     .pipe(reload({stream:true}));
-})
+});

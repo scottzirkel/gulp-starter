@@ -14,4 +14,4 @@ gulp.task('build', ['clean'], function (callback) {
     ],
     'sassdoc',
     callback);
-})
+});
