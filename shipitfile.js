@@ -111,7 +111,7 @@ module.exports = function (shipit) {
 
   shipit.blTask('cleanup:source', function () {
     shipit.log(chalk.green('Cleanup Source Files'));
-    return shipit.local('rm -rf * && rm -rf .git*', {cwd: '../tmp/' + config.projectName})
+    return shipit.local('rm -rf *', {cwd: '../tmp/' + config.projectName})
       .then(function () {
         shipit.log(chalk.green('Source Files Removed'));
         shipit.emit('source-cleaned');
