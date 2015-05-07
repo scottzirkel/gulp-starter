@@ -22,7 +22,6 @@ gulp.task('compass', function () {
       sass: 'app/sass',
       require: config.require
     }))
-    .pipe(concat('app.css'))
     .pipe(gulp.dest(config.dest))
     .pipe(reload({stream:true}));
 });

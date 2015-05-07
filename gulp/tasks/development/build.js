@@ -12,6 +12,5 @@ gulp.task('build', ['clean'], function (callback) {
       'bower:js',
       'images'
     ],
-    'sassdoc',
     callback);
 });
