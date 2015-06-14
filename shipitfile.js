@@ -19,7 +19,8 @@ module.exports = function (shipit) {
     keepReleases: 2,
     shallowClone: true
    },
-    staging: config.staging
+    staging: config.staging,
+    production: config.production
   });
 
   shipit.task('env', function () {
@@ -45,6 +46,23 @@ module.exports = function (shipit) {
         shipit.log(chalk.bgRed('Failed to install NPM'));
         shipit.stop();
       });
+  });
+
+  /*
+  Runs Bower in the workspace
+  */
+  shipit.blTask('bower', function () {
+    shipit.log(chalk.green('Installing Bower'));
+    return shipit.local('bower install', {cwd: '../tmp/' + config.projectName})
+      .then(function () {
+        shipit.log(chalk.green('Bower Installed'));
+        shipit.emit('installed-bower');
+      })
+      .catch(function () {
+        shipit.log(chalk.bgRed('Failed to install Bower'));
+        shipit.stop();
+      });
+
   });
 
   /*
@@ -161,6 +179,10 @@ module.exports = function (shipit) {
   });
 
   shipit.on('installed-npm', function () {
+    shipit.start(['bower']);
+  });
+
+  shipit.on('installed-bower', function () {
     shipit.start(['gulp']);
   });
 
