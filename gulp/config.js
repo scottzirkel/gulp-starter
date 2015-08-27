@@ -5,6 +5,7 @@ var src           = 'app',
     buildAssets   = build + '/assets';
 
 module.exports = {
+  autoprefixer: "'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'ff 17', 'opera 12.1', 'ios 6', 'android 4'",
   bower: {
     css: {
       src: [dependencies + '/**/css/*.css', dependencies + '/**/dist/*.css', dependencies + '/**/*.css'],
@@ -32,12 +33,6 @@ module.exports = {
       force: true
     }
   },
-  compass: {
-    src: src + '/sass/core.scss',
-    dest: buildAssets + '/css',
-    autoprefixer: "'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'ff 17', 'opera 12.1', 'ios 6', 'android 4'",
-    require: ['susy']
-  },
   html: {
     src: [src + '/html/**/*.html', !src + '/html/templates/*.html'],
     dest: build
@@ -55,13 +50,6 @@ module.exports = {
     dest: buildAssets + '/css',
     options: {
       outputStyle: 'compressed'
-    }
-  },
-  sassdoc: {
-    src: src + '/sass',
-    dest: build + '/docs',
-    options: {
-      verbose: true
     }
   },
   scsslint: {
