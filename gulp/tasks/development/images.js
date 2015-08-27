@@ -22,5 +22,5 @@ gulp.task('images', function () {
     ]
   }))
   .pipe(gulp.dest(config.dest))
-  .pipe(browsersync.reload({stream:true}));
+  .pipe(reload({stream:true}));
 });

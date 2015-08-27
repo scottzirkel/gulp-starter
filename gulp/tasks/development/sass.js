@@ -4,7 +4,7 @@ var gulp          = require('gulp'),
     sass          = require('gulp-sass'),
     sourcemaps    = require('gulp-sourcemaps'),
     autoprefixer  = require('gulp-autoprefixer'),
-    reload        = require('broswer-sync').reload,
+    reload        = require('browser-sync').reload,
     config        = require('../../config').sass;
 
 gulp.task('sass', function() {
