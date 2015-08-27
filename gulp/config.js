@@ -44,11 +44,23 @@ module.exports = {
   },
   images: {
     src: src + '/images/**/*.{jpg,jpeg,gif,png}',
-    dest: buildAssets + '/img'
+    dest: buildAssets + '/img',
+    imagemin: {
+      progressive: true,
+      optimizationLevel: 7,
+      use: [pngquant()]
+    }
   },
   javascript: {
     src: src + '/js/**/*.js',
     dest: buildAssets + '/js'
+  },
+  sass: {
+    src: src + '/sass/core.scss',
+    dest: buildAssets + '/css',
+    options: {
+      outputStyle: 'compressed'
+    }
   },
   sassdoc: {
     src: src + '/sass',

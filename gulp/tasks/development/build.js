@@ -6,7 +6,7 @@ gulp.task('build', ['clean'], function (callback) {
     'scss-lint',
     [
       'html',
-      'compass',
+      'sass',
       'javascript',
       'bower:css',
       'bower:js',
