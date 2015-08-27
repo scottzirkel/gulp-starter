@@ -4,7 +4,7 @@ var gulp    = require('gulp'),
     config  = require('../../config').javascript;
 
 gulp.task('javascript', function () {
-  gulp.src(config.src)
+  return gulp.src(config.src)
     .pipe(concat('app.js'))
     .pipe(gulp.dest(config.dest))
     .pipe(reload({stream:true}));

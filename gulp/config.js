@@ -44,12 +44,7 @@ module.exports = {
   },
   images: {
     src: src + '/images/**/*.{jpg,jpeg,gif,png}',
-    dest: buildAssets + '/img',
-    imagemin: {
-      progressive: true,
-      optimizationLevel: 7,
-      use: [pngquant()]
-    }
+    dest: buildAssets + '/img'
   },
   javascript: {
     src: src + '/js/**/*.js',
