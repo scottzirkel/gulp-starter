@@ -14,7 +14,7 @@ module.exports = {
   },
   bower: {
     src: dependencies + '/**/*',
-    dest: buildAssets + '/_components',
+    dest: buildAssets + '/_components'
   },
   browsersync: {
     server: {
