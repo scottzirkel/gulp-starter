@@ -7,14 +7,8 @@ var src           = 'app',
 module.exports = {
   autoprefixer: "'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'ff 17', 'opera 12.1', 'ios 6', 'android 4'",
   bower: {
-    css: {
-      src: [dependencies + '/**/css/*.css', dependencies + '/**/dist/*.css', dependencies + '/**/*.css'],
-      dest: buildAssets + '/css'
-    },
-    js: {
-      src: [dependencies + '/dist/**.min.js', dependencies + '/**/*.js', !dependencies + '/src/*.js'],
-      dest: buildAssets + '/js'
-    }
+    src: dependencies + '/**/*',
+    dest: buildAssets + '/_components',
   },
   browsersync: {
     server: {
@@ -61,6 +55,7 @@ module.exports = {
   watch: {
     images: src + '/images/**/*.{jpg,jpeg,gif,png}',
     html: src + '/html/**/*.html',
-    sass: src + '/sass/**/*.{sass,scss}'
+    sass: src + '/sass/**/*.{sass,scss}',
+    scripts: src + '/scripts/**/*.js'
   }
 };

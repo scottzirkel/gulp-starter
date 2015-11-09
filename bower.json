@@ -5,7 +5,7 @@
     "Scott Zirkel <scott@thealaragroup.net>",
     "Christina Donald <christina@thealaragroup.net>"
   ],
-  "description": "2014 Site",
+  "description": "2015 Site",
   "main": "index.html",
   "license": "MIT",
   "homepage": "http://thealaragroup.net",
@@ -18,8 +18,13 @@
     "tests"
   ],
   "dependencies": {
-    "fontawesome": "~4.2.0",
-    "breakpoint": "~4.6.4",
-    "jquery-waypoints": "~2.0.5"
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0"
+  },
+  "exportsOverride": {
+    "font-awesome": {
+      "fonts": "fonts/*",
+      "css": "css/font-awesome.css"
+    }
   }
 }

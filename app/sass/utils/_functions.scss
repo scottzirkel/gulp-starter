@@ -7,7 +7,7 @@
 /// @param {Number} $value - Value of graytone returned (word value)
 /// @return {Color}
 /// @requires $graytone
-@function graytones($family, $tone) {
+@function graytone($family, $tone) {
   @return map-get(map-get($graytone, $family), $tone);
 }
 

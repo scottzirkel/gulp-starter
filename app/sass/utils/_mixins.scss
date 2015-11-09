@@ -25,7 +25,7 @@
 * @param {Color} $shadow-2 (transparent) - Shadow Color
 * @requires $title
 */
-@mixin title($font-size: 95px, $line-height: 145px, $color: graytones(cool, two), $shadow-1: transparent, $shadow-2: transparent) {
+@mixin title($font-size: 95px, $line-height: 145px, $color: graytone(cool, two), $shadow-1: transparent, $shadow-2: transparent) {
   font-weight: 800;
   font-size: $font-size;
   line-height: $line-height;
@@ -162,5 +162,33 @@
     @warn "Invalid $depth `#{$depth}` for mixin `card`.";
   } @else {
     box-shadow: bottom-shadow($depth), top-shadow($depth);
+  }
+}
+
+// for lists using font-awesome icons as bullets
+@mixin fa-list($fa, $color, $font-size: auto, $line-height: auto) {
+  list-style: none;
+  li {
+    position: relative;
+    padding-left: 1.2em;
+    padding-bottom: .5em;
+    &:before {
+      font-family: 'FontAwesome';
+      content: $fa;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1em;
+      height: 1em;
+      @if $color {
+        color: $color;
+      }
+      @if $font-size {
+        font-size: $font-size;
+      }
+      @if $line-height {
+        line-height: $line-height;
+      }
+    }
   }
 }
