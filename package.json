@@ -37,6 +37,7 @@
     "shipit-deploy": "^2.0.0"
   },
   "scripts": {
+    "start": "npm run gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
