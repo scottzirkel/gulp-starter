@@ -5,7 +5,13 @@ var src           = 'app',
     buildAssets   = build + '/assets';
 
 module.exports = {
-  autoprefixer: "'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'ff 17', 'opera 12.1', 'ios 6', 'android 4'",
+  autoprefixer: {
+    browsers: [
+      '> 5%',
+      'last 2 versions'
+    ],
+    cascade: false
+  },
   bower: {
     src: dependencies + '/**/*',
     dest: buildAssets + '/_components',
