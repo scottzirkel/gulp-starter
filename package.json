@@ -38,7 +38,7 @@
   },
   "scripts": {
     "setup": "bower install; npm install",
-    "start": "npm run gulp",
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
