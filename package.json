@@ -37,7 +37,7 @@
     "shipit-deploy": "^2.0.0"
   },
   "scripts": {
-    "setup": "bower install; npm install",
+    "setup": "bower install; npm install; gulp",
     "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
