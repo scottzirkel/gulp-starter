@@ -10,14 +10,58 @@ I am using the following setup for my file structure:
 
 ```
 + app
+  + html
+    + templates
+      - footer.html
+      - header.html
+    - index.html
+  + sass
+    + base
+     - _normalize.scss
+     - _typography.scss
+    + layout
+      - _body.scss
+      - _footer.scss
+      - _header.scss
+      - _navigation.scss
+    + utils
+      - _colors.scss
+      - _functions.scss
+      - _mixins.scss
+      - _variables.scss
+    - _shame.scss
+    - core.scss
+
 + gulp
+  + tasks
+    + development
+    - default.js
+  -config.js
 - .bowerrc
 - bower.json
 - gulpfile.js
 - package.json
+- shipitfile.js
+- shipitconfig.js
 ```
 
-## Bower
+## Quick Install
+
+To install all packages and start gulp for the first time, run
+
+```
+npm run setup
+```
+
+To run nmp & gulp
+
+```
+npm start
+```
+
+## Manual Install
+
+### Bower
 
 Bower installs to the `app/_componets` folder, this is
 configurable in the `.bowerrc file`. If this is changed, also update it in your `package.json`. Install with
@@ -26,7 +70,7 @@ configurable in the `.bowerrc file`. If this is changed, also update it in your 
 bower install
 ```
 
-## Gulp
+### Gulp
 
 You'll need to have [Node](http://node.js) installed to run gulp. Additionally, gulp must be installed globally.
 
