@@ -8,8 +8,7 @@ gulp.task('build', ['clean'], function (callback) {
       'html',
       'sass',
       'javascript',
-      'bower:css',
-      'bower:js',
+      'bower',
       'images'
     ],
     callback);
