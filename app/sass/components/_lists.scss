@@ -1,0 +1,18 @@
+.list__arrow {
+  list-style: none;
+  padding: 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  li {
+    padding: 0;
+    padding-left: 2em;
+    position: relative;
+    &:before {
+      content: '\f01d';
+      font-family: 'FontAwesome';
+      position: absolute;
+      left: 0;
+      bottom: .25em;
+    }
+  }
+}

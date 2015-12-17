@@ -35,16 +35,21 @@
 */
 
 @import 'utils/variables';
-@import 'utils/colors';
 @import 'utils/functions';
+@import 'utils/colors';
 @import 'utils/mixins';
 
 @import 'base/normalize';
+@import 'base/typographic';
 @import 'base/typography';
 
 @import 'layout/body';
 @import 'layout/navigation';
 @import 'layout/header';
 @import 'layout/footer';
+
+@import 'components/buttons';
+@import 'components/lists';
+@import 'components/forms';
 
 @import 'shame';

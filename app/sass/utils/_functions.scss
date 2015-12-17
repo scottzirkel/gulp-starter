@@ -1,3 +1,33 @@
+@function colorAdjust($color, $adjustment, $base: 10) {
+  @if $adjustment == dark {
+    $color: darken($color, $base);
+    @return desaturate($color, $base);
+  } @else if $adjustment == darker {
+    $multiplier: $base * 2;
+    $color: darken($color, $multiplier);
+    @return desaturate($color, $multiplier);
+  } @else if $adjustment == darkest {
+    $multiplier: $base * 4;
+    $color: darken($color, $multiplier);
+    @return desaturate($color, $multiplier);
+  } @else if $adjustment == light {
+    $color: lighten($color, $base);
+    @return saturate($color, $base);
+  } @else if $adjustment == lighter {
+    $multiplier: $base * 2;
+    $color: lighten($color, $multiplier);
+    @return saturate($color, $multiplier);
+  } @else if $adjustment == lightest {
+    $multiplier: $base * 4;
+    $color: lighten($color, $multiplier);
+    @return saturate($color, $multiplier);
+  }
+}
+
+@function palette($palette, $tone: 'base') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}
+
 /// Choose a gray tone
 /// - neutral
 /// - cool

@@ -1,5 +1,18 @@
 $black: black;
 $white: white;
+$color: #color;
+
+$palettes: (
+  color: (
+    lightest: colorAdjust($color, lightest),
+    lighter: colorAdjust($color, lighter),
+    light: colorAdjust($color, light),
+    base: $color,
+    dark: colorAdjust($color, dark),
+    darker: colorAdjust($color, darker),
+    darkest: colorAdjust($color, darkest)
+  )
+);
 
 $graytones: (
   neutral: (

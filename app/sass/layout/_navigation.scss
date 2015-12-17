@@ -1,0 +1,24 @@
+.nav--primary {
+  padding: 0;
+  margin: 0;
+  list-type: none;
+  text-align: center;
+  li {
+    display: inline;
+    padding-left: 1em;
+    padding-right: 1em;
+    a{
+      font-weight: 700;
+      font-family: $headline;
+      text-transform: uppercase;
+      color: $black;
+      &:hover {
+        color: $branding--primary;
+        text-decoration: none;
+      }
+      &:before {
+        content: '';
+      }
+    }
+  }
+}
