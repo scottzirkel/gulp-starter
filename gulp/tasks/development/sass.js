@@ -5,7 +5,7 @@ var gulp          = require('gulp'),
     sourcemaps    = require('gulp-sourcemaps'),
     autoprefixer  = require('gulp-autoprefixer'),
     concat        = require('gulp-concat'),
-    minifyCss     = require('gulp-minify-css'),
+    cssnano       = require('gulp-cssnano'),
     reload        = require('browser-sync').reload,
     rules         = require('../../config').autoprefixer,
     config        = require('../../config').sass;
@@ -16,7 +16,7 @@ gulp.task('sass', function() {
     .pipe(autoprefixer(rules))
     .pipe(concat('app.min.css'))
     .pipe(sourcemaps.init())
-    .pipe(minifyCss())
+    .pipe(cssnano())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.dest))
     .pipe(reload({stream:true}));
