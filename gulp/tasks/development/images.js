@@ -7,7 +7,8 @@ var gulp      = require('gulp'),
     reload    = require('browser-sync').reload,
     imagemin  = require('gulp-imagemin'),
     pngquant  = require('imagemin-pngquant'),
-    mozjpeg   = require('imagemin-mozjpeg'),
+    // mozjpeg   = require('imagemin-mozjpeg'),
+    jpegtran   = require('imagemin-jpegtran'),
     config    = require('../../config').images;
 
 gulp.task('images', function () {
@@ -18,7 +19,8 @@ gulp.task('images', function () {
     optimizationLevel: 7,
     use: [
       pngquant(),
-      mozjpeg({quality: 60})
+      // mozjpeg({quality: 60}) MOZJPEG was having issues
+      jpegtran({progressive: true})
     ]
   }))
   .pipe(gulp.dest(config.dest))
