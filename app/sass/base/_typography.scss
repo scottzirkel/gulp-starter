@@ -1,7 +1,7 @@
 a {
-  color: $branding--primary__shadow;
+  color: palette(COLOR, dark);
   &:hover {
-    color: $branding--primary;
+    color: palette(COLOR);
   }
 }
 

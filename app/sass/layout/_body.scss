@@ -21,7 +21,7 @@ body {
   text-align: center;
   strong,
   em {
-    color: $branding--primary;
+    color: palette(COLOR);
   }
 }
 
@@ -65,7 +65,7 @@ body {
   text-align: center;
   h5 {
     margin-top: 0;
-    color: $branding--primary;
+    color: palette(COLOR);
   }
   div {
     padding-left: 3em;

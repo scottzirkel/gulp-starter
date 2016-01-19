@@ -2,8 +2,10 @@ $black: black;
 $white: white;
 $color: #color;
 
+// NOTE: replace all instances of COLOR in sass directory with color set below
+
 $palettes: (
-  color: (
+  COLOR: (
     lightest: colorAdjust($color, lightest),
     lighter: colorAdjust($color, lighter),
     light: colorAdjust($color, light),

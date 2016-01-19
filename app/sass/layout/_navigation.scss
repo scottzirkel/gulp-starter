@@ -13,7 +13,7 @@
       text-transform: uppercase;
       color: $black;
       &:hover {
-        color: $branding--primary;
+        color: palette(COLOR);
         text-decoration: none;
       }
       &:before {

@@ -2,13 +2,13 @@ input {
   margin-top: 1em;
   margin-bottom: 1em;
   border: 0;
-  border-left: 8px solid $branding--primary;
+  border-left: 8px solid palette(COLOR);
   background: #eff1f3;
   width: 50%;
   &:active,
   &:focus {
     outline: none;
-    border-left: 8px solid $branding--primary__shadow;
+    border-left: 8px solid palette(COLOR, dark);
   }
 }
 
@@ -16,13 +16,13 @@ textarea {
   margin-top: 1em;
   margin-bottom: 1em;
   border: 0;
-  border-left: 8px solid $branding--primary;
+  border-left: 8px solid palette(COLOR);
   background: #eff1f3;
   width: 50%;
   &:active,
   &:focus {
     outline: none;
-    border-left: 8px solid $branding--primary__shadow;
+    border-left: 8px solid palette(COLOR, dark);
   }
 }
 
