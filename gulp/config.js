@@ -38,11 +38,11 @@ module.exports = {
     dest: build
   },
   images: {
-    src: src + '/images/**/*.{jpg,jpeg,gif,png}',
+    src: src + '/images/**.{jpg,jpeg,gif,png}',
     dest: buildAssets + '/img'
   },
   javascript: {
-    src: src + '/js/**/*.js',
+    src: src + '/scripts/**.js',
     dest: buildAssets + '/js'
   },
   sass: {
@@ -59,9 +59,9 @@ module.exports = {
     }
   },
   watch: {
-    images: src + '/images/**/*.{jpg,jpeg,gif,png}',
+    images: src + '/images/**.{jpg,jpeg,gif,png}',
     html: src + '/html/**/*.html',
     sass: src + '/sass/**/*.{sass,scss}',
-    scripts: src + '/scripts/**/*.js'
+    scripts: src + '/scripts/**.js'
   }
 };
