@@ -24,7 +24,7 @@ module.exports = {
     files: [
       buildAssets + '/css/*.css',
       buildAssets + '/js/.js',
-      buildAssets + '/img/**.{jpg,jpeg,gif,png}'
+      buildAssets + '/img/**/*.{jpg,jpeg,gif,png}'
     ]
   },
   clean: {
@@ -38,11 +38,11 @@ module.exports = {
     dest: build
   },
   images: {
-    src: src + '/images/**.{jpg,jpeg,gif,png}',
+    src: src + '/images/**/*.{jpg,jpeg,gif,png}',
     dest: buildAssets + '/img'
   },
   javascript: {
-    src: src + '/scripts/**.js',
+    src: src + '/scripts/**/*',
     dest: buildAssets + '/js'
   },
   sass: {
@@ -59,9 +59,9 @@ module.exports = {
     }
   },
   watch: {
-    images: src + '/images/**.{jpg,jpeg,gif,png}',
+    images: src + '/images/**/*.{jpg,jpeg,gif,png}',
     html: src + '/html/**/*.html',
     sass: src + '/sass/**/*.{sass,scss}',
-    scripts: src + '/scripts/**.js'
+    scripts: src + '/scripts/**/*'
   }
 };
