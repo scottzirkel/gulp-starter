@@ -62,6 +62,6 @@ module.exports = {
     images: src + '/images/**/*.{jpg,jpeg,gif,png}',
     html: src + '/html/**/*.html',
     sass: src + '/sass/**/*.{sass,scss}',
-    scripts: src + '/scripts/**/*.js'
+    scripts: src + '/scripts/**/*'
   }
 };
