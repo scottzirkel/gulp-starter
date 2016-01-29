@@ -6,11 +6,7 @@ body {
   @include typographic();
 }
 
-.marketing {
-  font-family: $marketing;
-  font-weight: 300;
-  color: $black;
-}
+
 
 .inverted {
   padding: 4em 2em;
@@ -21,60 +17,6 @@ body {
   text-align: center;
   strong,
   em {
-    color: palette(COLOR);
-  }
-}
-
-.callout {
-  font-size: 1.3em;
-  font-weight: 300;
-  p {
-    width: 66%;
-    margin: auto;
-  }
-  strong,
-  em {
-    font-weight: 400;
-  }
-}
-
-.offset--header {
-  margin-top: 2em;
-  margin-bottom: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.offset--h2 {
-  margin: 0;
-  text-align: center;
-  padding-left: 2em;
-  padding-right: 2em;
-}
-
-.offset--p {
-  margin: 0;
-}
-
-.columns__three {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4em;
-  margin-bottom: 4em;
-  text-align: center;
-  h5 {
-    margin-top: 0;
-    color: palette(COLOR);
-  }
-  div {
-    padding-left: 3em;
-    padding-right: 3em;
-  }
-  & div:first-child {
-    border-right: 1px solid $black;
-  }
-  & div:last-child {
-    border-left: 1px solid $black;
+    color: palette(C0L0R);
   }
 }

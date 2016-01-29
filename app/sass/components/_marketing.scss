@@ -1,0 +1,37 @@
+.marketing {
+  font-family: $marketing;
+  font-weight: 300;
+  color: $black;
+}
+
+.callout {
+  font-size: 1.3em;
+  font-weight: 300;
+  p {
+    width: 66%;
+    margin: auto;
+  }
+  strong,
+  em {
+    font-weight: 400;
+  }
+}
+
+.offset--header {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.offset--h2 {
+  margin: 0;
+  text-align: center;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.offset--p {
+  margin: 0;
+}

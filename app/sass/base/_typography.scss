@@ -1,15 +1,8 @@
 a {
-  color: palette(COLOR, dark);
+  color: palette(C0L0R, dark);
+  text-decoration: none;
+  transition: all .5s ease-in-out;
   &:hover {
-    color: palette(COLOR);
+    color: palette(C0L0R);
   }
-}
-
-em {
-  font-weight: 700;
-  font-style: italic;
-}
-
-strong {
-  font-weight: 700;
 }
