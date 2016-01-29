@@ -23,8 +23,8 @@ module.exports = {
     port: 9999,
     files: [
       buildAssets + '/css/*.css',
-      buildAssets + '/js/.js',
-      buildAssets + '/img/**.{jpg,jpeg,gif,png}'
+      buildAssets + '/js/**/*.js',
+      buildAssets + '/img/**/*.{jpg,jpeg,gif,png}'
     ]
   },
   clean: {
@@ -34,7 +34,7 @@ module.exports = {
     }
   },
   html: {
-    src: [src + '/html/**/*.html', !src + '/html/templates/*.html'],
+    src: [!src + '/html/({**/_*.html}', src + '/html/**/*.html'],
     dest: build
   },
   images: {
@@ -42,7 +42,7 @@ module.exports = {
     dest: buildAssets + '/img'
   },
   javascript: {
-    src: src + '/js/**/*.js',
+    src: src + '/scripts/**/*.js',
     dest: buildAssets + '/js'
   },
   sass: {

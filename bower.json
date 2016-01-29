@@ -1,14 +1,14 @@
 {
-  "name": "Alara",
-  "version": "2.0.0",
+  "name": "Project Name",
+  "version": "v*.*.*",
   "authors": [
     "Scott Zirkel <scott@thealaragroup.net>",
     "Christina Donald <christina@thealaragroup.net>"
   ],
-  "description": "2015 Site",
+  "description": "Project Description",
   "main": "index.html",
   "license": "MIT",
-  "homepage": "http://thealaragroup.net",
+  "homepage": "Project URL",
   "private": true,
   "ignore": [
     "**/.*",
@@ -18,8 +18,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.5",
-    "font-awesome": "~4.4.0"
+    "font-awesome": "~4.4.0",
+    "jquery": "~2.2.0"
   },
   "exportsOverride": {
     "font-awesome": {

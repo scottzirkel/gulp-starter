@@ -18,7 +18,14 @@ I am using the following setup for my file structure:
   + sass
     + base
      - _normalize.scss
+     - _skeleton.scss
+     - _typographic.scss
      - _typography.scss
+    + components
+     - _buttons.scss
+     - _forms.scss
+     - _lists.scss
+     - _marketing.scss
     + layout
       - _body.scss
       - _footer.scss
@@ -39,8 +46,10 @@ I am using the following setup for my file structure:
   -config.js
 - .bowerrc
 - bower.json
+- .editorconfig
 - gulpfile.js
 - package.json
+- scsslint.yml
 - shipitfile.js
 - shipitconfig.js
 ```
@@ -82,6 +91,7 @@ npm install
 
 If you wish to change the file structure, update `gulp/config.js` to reflect those changes. Additionally, all task configs are located in this file.
 
+**Note:** This isn't setup yet.
 All gulp tasks have their own file. The build tasks are located in `gulp/development`. The production ready tasks are located in `gulp/production`.
 
 To build files and start the server run:
@@ -91,7 +101,7 @@ gulp
 ```
 
 To build production files and preview them, run:
-
+*(but not yet)*
 ```
 gulp publish
 ```

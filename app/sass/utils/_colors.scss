@@ -1,11 +1,11 @@
 $black: black;
 $white: white;
-$color: #color;
+$color: #398d9c;
 
-// NOTE: replace all instances of COLOR in sass directory with color set below
+// NOTE: replace all instances of C0L0R in sass directory with color set below
 
 $palettes: (
-  COLOR: (
+  C0L0R: (
     lightest: colorAdjust($color, lightest),
     lighter: colorAdjust($color, lighter),
     light: colorAdjust($color, light),
