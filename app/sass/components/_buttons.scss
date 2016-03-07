@@ -10,8 +10,8 @@
 }
 
 .btn-primary {
-  background: linear-gradient(to right, C0L0R, palette(C0L0R, dark));
+  background: linear-gradient(to right, primary, palette(primary, dark));
   &:hover {
-    background: linear-gradient(to right, palette(C0L0R, dark), palette(C0L0R, darker));
+    background: linear-gradient(to right, palette(primary, dark), palette(primary, darker));
   }
 }

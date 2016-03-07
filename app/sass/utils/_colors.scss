@@ -1,18 +1,18 @@
 $black: black;
 $white: white;
-$color: #398d9c;
+$primary: #398d9c;
 
-// NOTE: replace all instances of C0L0R in sass directory with color set below
+// NOTE: replace all instances of  in sass directory with color set below
 
 $palettes: (
-  C0L0R: (
-    lightest: colorAdjust($color, lightest),
-    lighter: colorAdjust($color, lighter),
-    light: colorAdjust($color, light),
-    base: $color,
-    dark: colorAdjust($color, dark),
-    darker: colorAdjust($color, darker),
-    darkest: colorAdjust($color, darkest)
+  primary: (
+    lightest: colorAdjust($primary, lightest),
+    lighter: colorAdjust($primary, lighter),
+    light: colorAdjust($primary, light),
+    base: $primary,
+    dark: colorAdjust($primary, dark),
+    darker: colorAdjust($primary, darker),
+    darkest: colorAdjust($primary, darkest)
   )
 );
 

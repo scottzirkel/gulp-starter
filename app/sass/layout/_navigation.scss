@@ -13,7 +13,7 @@
 //       text-transform: uppercase;
 //       color: $black;
 //       &:hover {
-//         color: C0L0R;
+//         color: primary;
 //         text-decoration: none;
 //       }
 //       &:before {
@@ -51,9 +51,9 @@
       font-weight: 700;
       font-family: $sans;
       text-transform: uppercase;
-      color: palette(C0L0R);
+      color: palette(primary);
       &:hover {
-        color: palette(C0L0R, darker);
+        color: palette(primary, darker);
         text-decoration: none;
         text-shadow: 0 0 .6em rgba(255, 255, 255, 0.6);
       }
@@ -84,8 +84,8 @@
 }
 
 .nav--secondary {
-  background: palette(C0L0R, dark);
-  border-bottom: 1px solid palette(C0L0R, darker);
+  background: palette(primary, dark);
+  border-bottom: 1px solid palette(primary, darker);
   position: relative; // for the search to work properly on mobile
   &__inner {
     margin: 0 auto;
@@ -118,21 +118,21 @@
     padding-left: 1em;
     padding-right: 1em;
     font: bold .75em/2.375em $sans;
-    color: palette(C0L0R);
+    color: palette(primary);
     &:hover {
-      color: palette(C0L0R, darker);
+      color: palette(primary, darker);
     }
     @include respond-to(small) {
-      color: palette(C0L0R, light);
+      color: palette(primary, light);
       &:hover {
-        color: palette(C0L0R, lightest);
+        color: palette(primary, lightest);
       }
     }
   }
 }
 
 .nav--curtain {
-  background: palette(C0L0R, darker);
+  background: palette(primary, darker);
   border: none;
   max-height: 0;
   text-align: center;
@@ -147,7 +147,7 @@
         display: none;
       }
       a {
-        color: palette(C0L0R, lightest);
+        color: palette(primary, lightest);
         display: block;
         line-height: 2.5em;
       }
