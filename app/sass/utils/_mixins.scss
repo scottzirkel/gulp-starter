@@ -192,3 +192,11 @@
     }
   }
 }
+
+// Add placeholder to form element
+@mixin placeholder() {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder {@content}
+  &::-moz-placedholder {@content}
+  &::-ms-input-placeholder {@content}
+}

@@ -1,12 +1,6 @@
 .columns {
-  background: blue;
   @include respond-to(small) {
     display: flex;
-    background: red;
-    margin-bottom: 10px;
-    margin-left: -10px;
-    margin-right: -10px;
-    margin-top: -10px;
   }
   &--borders {
     @extend .columns;
