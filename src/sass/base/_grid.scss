@@ -1,0 +1,47 @@
+.columns {
+  @include respond-to(small) {
+    display: flex;
+  }
+  &--borders {
+    @extend .columns;
+    .column {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0px;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        border-right: 1px solid $black;
+      }
+      &:last-child:after {
+        border: none;
+      }
+    }
+  }
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+  display: block;
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.columns--borders .column > div {
+  background: transparent;
+  color: $black;
+}
+
+.column > div {
+  background: palette(primary);
+  color: $white;
+  padding: 1em 1.25em;
+  border-radius: 3px;
+}

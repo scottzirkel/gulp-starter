@@ -1,8 +1,8 @@
-var src           = 'app',
-    build         = 'build',
+var src           = 'src',
+    dist         = 'dist',
     dependencies  = src + '/_components',
     assets        = src + '/assets',
-    buildAssets   = build + '/assets';
+    distAssets   = dist + '/assets';
 
 module.exports = {
   autoprefixer: {
@@ -14,40 +14,41 @@ module.exports = {
   },
   bower: {
     src: dependencies + '/**/*',
-    dest: buildAssets + '/_components'
+    dest: distAssets + '/_components'
   },
   browsersync: {
     server: {
-      baseDir: [build]
+      baseDir: [dist]
     },
     port: 9999,
+    scrollProportionally: false,
     files: [
-      buildAssets + '/css/*.css',
-      buildAssets + '/js/**/*.js',
-      buildAssets + '/img/**/*.{jpg,jpeg,gif,png}'
+      distAssets + '/css/*.css',
+      distAssets + '/js/**/*.js',
+      distAssets + '/img/**/*.{jpg,jpeg,gif,png}'
     ]
   },
   clean: {
-    src: build,
+    src: dist,
     options: {
       force: true
     }
   },
   html: {
     src: [!src + '/html/({**/_*.html}', src + '/html/**/*.html'],
-    dest: build
+    dest: dist
   },
   images: {
     src: src + '/images/**/*.{jpg,jpeg,gif,png}',
-    dest: buildAssets + '/img'
+    dest: distAssets + '/img'
   },
   javascript: {
     src: src + '/scripts/**/*.js',
-    dest: buildAssets + '/js'
+    dest: distAssets + '/js'
   },
   sass: {
     src: src + '/sass/core.scss',
-    dest: buildAssets + '/css',
+    dest: distAssets + '/css',
     options: {
       outputStyle: 'compressed'
     }

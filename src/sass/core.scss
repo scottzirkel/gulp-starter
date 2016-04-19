@@ -1,0 +1,67 @@
+/**
+* The Alara Group
+* Christina Donald <christina@thealaragroup.net> - Design
+* Scott Zirkel <scott@thealaragroup.net> - CSS/HTML/JS & Design
+*
+* A few notes:
+* Follow the Code Guide - http://codeguide.co/
+* Use BEM styntax.
+* ie:
+* .block {}
+* .block__element {}
+* .block--modifier {}
+*
+* .block represents the higher level of an abstraction or component.
+* .block__element represents a descendent of .block that helps form .block as a whole.
+* .block--modifier represents a different state or version of .block.
+*
+* More here: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+*/
+
+/*
+* Follow SASS Guidelines as set forth here: http://sass-guidelin.es/
+*
+*/
+
+/*
+* CSS declaration order
+* positioning
+* box-model
+* typography
+* visual
+* misc
+*/
+
+/*
+* @import order:
+* vendor
+* utils
+* base
+* layout
+* components
+* pages
+* shame
+*/
+
+@import 'utils/variables';
+@import 'utils/functions';
+@import 'utils/colors';
+@import 'utils/mixins';
+@import 'utils/tools';
+
+@import 'base/normalize';
+@import 'base/typographic';
+@import 'base/typography';
+@import 'base/skeleton';
+@import 'base/grid';
+
+@import 'layout/body';
+@import 'layout/navigation';
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'components/buttons';
+@import 'components/lists';
+@import 'components/forms';
+
+@import 'shame';

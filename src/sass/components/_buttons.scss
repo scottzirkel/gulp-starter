@@ -1,0 +1,17 @@
+.btn {
+  color: $white;
+  text-transform: uppercase;
+  font-family: $sans;
+  font-weight: 700;
+  border-radius: 0;
+  padding-left: 2em;
+  padding-right: 2em;
+  border: 0;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, primary, palette(primary, dark));
+  &:hover {
+    background: linear-gradient(to right, palette(primary, dark), palette(primary, darker));
+  }
+}

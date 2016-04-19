@@ -1,0 +1,12 @@
+a {
+  color: palette(primary, dark);
+  text-decoration: none;
+  transition: all .5s ease-in-out;
+  &:hover {
+    color: palette(primary);
+  }
+}
+
+.centered {
+  text-align: center;
+}
