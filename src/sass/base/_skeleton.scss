@@ -13,6 +13,19 @@
   @include respond-to(large) {
     max-width: 70em;
   }
+  &--no-padding {
+    @extend .container;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  &--no-padding-top {
+    @extend .container;
+    padding-top: 0;
+  }
+  &--no-padding-bottom {
+    @extend .container;
+    padding-bottom: 0;
+  }
 }
 
 .columns__three {
