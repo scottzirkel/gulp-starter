@@ -1,6 +1,5 @@
-build
 dist
 node_modules
 npm-debug.log
-app/_components
+src/_components
 .sass-cache
