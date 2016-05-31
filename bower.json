@@ -1,9 +1,8 @@
 {
-  "name": "Project Name",
+  "name": "project-name",
   "version": "v*.*.*",
   "authors": [
-    "Scott Zirkel <scott@thealaragroup.net>",
-    "Christina Donald <christina@thealaragroup.net>"
+    "Scott Zirkel <scott@thealaragroup.net>"
   ],
   "description": "Project Description",
   "main": "index.html",
