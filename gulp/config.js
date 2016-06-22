@@ -1,8 +1,9 @@
 var src           = 'src',
-    dist         = 'dist',
+    dist          = 'dist',
     dependencies  = src + '/_components',
     assets        = src + '/assets',
-    distAssets   = dist + '/assets';
+    distAssets    = dist + '/assets',
+    theme         = 'public/themes/THEME_NAME/assets';
 
 module.exports = {
   autoprefixer: {
@@ -14,7 +15,11 @@ module.exports = {
   },
   bower: {
     src: dependencies + '/**/*',
-    dest: distAssets + '/_components'
+    dest: distAssets + '/_components',
+    wp: {
+      src: dependencies + '/**/*',
+      dest: theme + '/_components'
+    }
   },
   browsersync: {
     server: {
@@ -39,30 +44,55 @@ module.exports = {
     dest: dist
   },
   images: {
-    src: src + '/images/**/*.{jpg,jpeg,gif,png}',
-    dest: distAssets + '/img'
+    src: src + '/images/**/*.{jpg,jpeg,gif,png,svg}',
+    dest: distAssets + '/img',
+    wp: {
+      src: src + '/images/**/*.{jpg,jpeg,gif,png,svg}',
+      dest: theme + '/img'
+    }
   },
   javascript: {
     src: src + '/scripts/**/*.js',
-    dest: distAssets + '/js'
+    dest: distAssets + '/js',
+    wp: {
+      src: src + '/scripts/**/*.js',
+      dest: theme + '/js'
+    }
   },
   sass: {
     src: src + '/sass/core.scss',
     dest: distAssets + '/css',
     options: {
       outputStyle: 'compressed'
+    },
+    wp: {
+      src: src + '/sass/core.css',
+      dest: theme + '/css',
+      options: {
+        outputStyle: 'compressed'
+      }
     }
   },
   scsslint: {
     src: src + '/sass/*.scss',
     options: {
-      'config': '/scsslint.yaml'
+      'config': 'scsslint.yml'
+    }
+  },
+  static: {
+    src: src + '/static/**/*',
+    dest: distAssets + '/inc',
+    wp: {
+      src: src + '/static/**/*',
+      dest: theme + '/inc'
     }
   },
   watch: {
-    images: src + '/images/**/*.{jpg,jpeg,gif,png}',
+    bower: dependencies + '/_components/**/*',
     html: src + '/html/**/*.html',
+    images: src + '/images/**/*.{jpg,jpeg,gif,png}',
+    javascript: src + '/scripts/**/*',
     sass: src + '/sass/**/*.{sass,scss}',
-    scripts: src + '/scripts/**/*'
+    static: src + '/static/**/*'
   }
 };

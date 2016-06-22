@@ -1,15 +1,15 @@
 var gulp        = require('gulp'),
     runSequence = require('run-sequence');
 
-gulp.task('build', ['clean'], function (callback) {
+gulp.task('pub:build', ['clean'], function (callback) {
   runSequence(
     'scss-lint',
     [
-      'html',
-      'sass',
-      'javascript',
+      'pub:html',
+      'pub:sass',
+      'pub:javascript',
       'bower',
-      'images',
+      'pub:images',
       'static'
     ],
     callback);

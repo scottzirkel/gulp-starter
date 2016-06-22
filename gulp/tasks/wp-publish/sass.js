@@ -6,11 +6,10 @@ var gulp          = require('gulp'),
     autoprefixer  = require('gulp-autoprefixer'),
     concat        = require('gulp-concat'),
     cssnano       = require('gulp-cssnano'),
-    reload        = require('browser-sync').reload,
     rules         = require('../../config').autoprefixer,
-    config        = require('../../config').sass;
+    config        = require('../../config').sass.wp;
 
-gulp.task('sass', function() {
+gulp.task('wp:pub:sass', function() {
   return gulp.src(config.src)
     .pipe(sass(config.options).on('error', sass.logError))
     .pipe(autoprefixer(rules))
@@ -18,6 +17,5 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
     .pipe(cssnano())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(config.dest))
-    .pipe(reload({stream:true}));
+    .pipe(gulp.dest(config.dest));
 });

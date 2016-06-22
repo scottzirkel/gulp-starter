@@ -1,11 +1,11 @@
 var gulp        = require('gulp'),
     concat      = require('gulp-concat'),
-    reload      = require('browser-sync').reload,
+    uglify      = require('gulp-uglify'),
     config      = require('../../config').javascript;
 
-gulp.task('javascript', function () {
+gulp.task('pub:javascript', function () {
   return gulp.src(config.src)
     .pipe(concat('app.js'))
-    .pipe(gulp.dest(config.dest))
-    .pipe(reload({stream:true}));
+    .pipe(uglify({preserveComments: 'license'}))
+    .pipe(gulp.dest(config.dest));
 });
