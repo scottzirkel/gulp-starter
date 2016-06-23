@@ -193,7 +193,6 @@
   }
 }
 
-// Add placeholder to form element
 @mixin placeholder() {
   &::-webkit-input-placeholder {@content}
   &:-moz-placeholder {@content}

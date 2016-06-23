@@ -1,9 +1,3 @@
-$susy: (
-  columns: 12,
-  gutters: 1/4,
-  global-box-sizing: border-box
-);
-
 // Map of the viewport breakpoints
 $breakpoints: (
 small: 48em,
@@ -11,5 +5,4 @@ medium: 62em,
 large: 75em
 );
 
-$padding-horiz: 2em;
-$padding-vert: 1em;
+$baseline__vertical: 24px;

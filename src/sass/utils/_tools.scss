@@ -1,4 +1,22 @@
 .responsive {
   width: 100%;
   height: auto;
+  display: block;
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clear {
+  overflow: hidden;
+}
+
+.float--left {
+  float: left;
+}
+
+.float--right {
+  float: right;
 }

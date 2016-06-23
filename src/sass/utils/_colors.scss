@@ -2,8 +2,6 @@ $black: black;
 $white: white;
 $primary: #398d9c;
 
-// NOTE: replace all instances of  in sass directory with color set below
-
 $palettes: (
   primary: (
     lightest: colorAdjust($primary, lightest),
