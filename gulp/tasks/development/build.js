@@ -3,14 +3,11 @@ var gulp        = require('gulp'),
 
 gulp.task('build', ['clean'], function (callback) {
   runSequence(
-    'scss-lint',
-    [
-      'html',
-      'sass',
-      'javascript',
-      'bower',
-      'images',
-      'static'
-    ],
+    'html',
+    'sass',
+    'javascript',
+    'bower',
+    'images',
+    'static',
     callback);
 });

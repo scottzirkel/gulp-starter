@@ -9,7 +9,7 @@ var gulp          = require('gulp'),
     rules         = require('../../config').autoprefixer,
     config        = require('../../config').sass.wp;
 
-gulp.task('wp:pub:sass', function() {
+gulp.task('wp:pub:sass', ['sass-lint'], function() {
   return gulp.src(config.src)
     .pipe(sass(config.options).on('error', sass.logError))
     .pipe(autoprefixer(rules))

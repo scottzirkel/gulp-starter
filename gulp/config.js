@@ -73,11 +73,8 @@ module.exports = {
       }
     }
   },
-  scsslint: {
-    src: src + '/sass/*.scss',
-    options: {
-      'config': 'scsslint.yml'
-    }
+  sassLint: {
+    src: src + '/sass/*.scss'
   },
   static: {
     src: src + '/static/**/*',

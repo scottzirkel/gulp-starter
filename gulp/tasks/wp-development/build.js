@@ -3,12 +3,9 @@ var gulp        = require('gulp'),
 
 gulp.task('wp:build', function (callback) {
   runSequence(
-    'scss-lint',
-    [
-      'wp:sass',
-      'wp:javascript',
-      'wp:bower',
-      'wp:images'
-    ],
+    'wp:sass',
+    'wp:javascript',
+    'wp:bower',
+    'wp:images',
     callback);
 });
